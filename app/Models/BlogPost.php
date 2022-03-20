@@ -16,8 +16,14 @@ class BlogPost extends Model
  *
  * @return \Illuminate\Database\Eloquent\Factories\Factory
  */
-protected static function newFactory()
-{
-    return BlogPostFactory::new();
-}
+    protected static function newFactory(){
+        return BlogPostFactory::new();
+    }
+    /**
+     * Get the user that owns the post.
+     */
+    public function post()
+    {
+        return $this->belongsTo(BlogPost::class);
+    }
 }
