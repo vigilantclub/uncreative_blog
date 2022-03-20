@@ -38,6 +38,10 @@ class BlogPostController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'bail|required|unique:blog_posts|max:255',
+            'body' => 'required',
+        ]);
         $newPost = BlogPost::create([
             'title' => $request->title,
             'body' => $request->body,
