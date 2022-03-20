@@ -86,6 +86,10 @@ class BlogPostController extends Controller
      */
     public function update(Request $request, BlogPost $blogPost)
     {
+        $request->validate([
+            'title' => 'bail|required|unique:blog_posts|max:255',
+            'body' => 'required',
+        ]);
         $blogPost->update([
             'title' => $request->title,
             'body' => $request->body
