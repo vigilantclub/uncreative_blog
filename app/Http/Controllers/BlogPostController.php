@@ -38,10 +38,14 @@ class BlogPostController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'bail|required|unique:blog_posts|max:255',
+            'body' => 'required',
+        ]);
         $newPost = BlogPost::create([
             'title' => $request->title,
             'body' => $request->body,
-            'user_id' => 1
+            'user_id' => 1     //this needs to be automated.
         ]);
 
         return redirect('blog/' . $newPost->id);
@@ -82,6 +86,10 @@ class BlogPostController extends Controller
      */
     public function update(Request $request, BlogPost $blogPost)
     {
+        $request->validate([
+            'title' => 'bail|required|unique:blog_posts|max:255',
+            'body' => 'required',
+        ]);
         $blogPost->update([
             'title' => $request->title,
             'body' => $request->body
@@ -98,6 +106,8 @@ class BlogPostController extends Controller
      */
     public function destroy(BlogPost $blogPost)
     {
-        //
+        $blogPost->delete();
+
+        return redirect('/blog');
     }
 }

@@ -19,11 +19,17 @@
                                 <label for="title">Post Title</label>
                                 <input type="text" id="title" class="form-control" name="title"
                                        placeholder="Enter Post Title" required>
+                                       @error('title')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                             </div>
                             <div class="control-group col-12 mt-2">
                                 <label for="body">Post Body</label>
                                 <textarea id="body" class="form-control" name="body" placeholder="Enter Post Body"
                                           rows="" required></textarea>
+                                          @error('body')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                             </div>
                         </div>
                         <div class="row mt-2">
