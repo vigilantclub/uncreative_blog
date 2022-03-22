@@ -22,8 +22,8 @@ class BlogPost extends Model
     /**
      * Get the user that owns the post.
      */
-    public function post()
+    public function user()
     {
-        return $this->belongsTo(BlogPost::class);
+        return $this->belongsTo(User::class);
     }
 }
