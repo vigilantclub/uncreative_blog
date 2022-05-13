@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+//Still adding users onto the system.
+//thereafter will sort out how to implement.
 
 class UserController extends Controller
 {
