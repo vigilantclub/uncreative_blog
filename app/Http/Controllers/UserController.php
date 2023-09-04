@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        //show all users
     }
 
     /**
@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        //create user
     }
 
     /**
@@ -37,7 +37,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //store user in DB
     }
 
     /**
@@ -48,7 +48,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        //show one specified user
     }
 
     /**
@@ -59,7 +59,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        //edit specified user
     }
 
     /**
@@ -71,7 +71,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        //update changes to DB
     }
 
     /**
@@ -82,6 +82,6 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        //delete user from DB
     }
 }
